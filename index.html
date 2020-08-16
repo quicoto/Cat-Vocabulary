@@ -33,7 +33,13 @@
               <form class="pure-form pure-form-stacked">
                 <fieldset>
                     <label for="filter">Search found: {{ filteredDiccionary.length }}</label>
-                    <input type="text" id="filter" placeholder="" v-model="search" />
+                    <input
+                      type="text"
+                      id="filter"
+                      placeholder=""
+                      :value="search"
+                      @keypress="search = $event.target.value"
+                      @input="search = $event.target.value" />
                 </fieldset>
               </form>
             </div>
