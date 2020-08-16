@@ -37,7 +37,7 @@
       "english": "Possibility"
     },
     {
-      "cat": "Fur-end",
+      "cat": "Furfriend",
       "english": "Friend"
     },
     {
@@ -75,6 +75,66 @@
     {
       "cat": "Cat-astrophe",
       "english": "Catastrophe"
+    },
+    {
+      "cat": "Caturday",
+      "english": "Saturday"
+    },
+    {
+      "cat": "Pawpal",
+      "english": "Pal"
+    },
+    {
+      "cat": "Kitten",
+      "english": "Kidding"
+    },
+    {
+      "cat": "Pawsession",
+      "english": "Possession"
+    },
+    {
+      "cat": "Pawsitive",
+      "english": "Positive"
+    },
+    {
+      "cat": "Furmiliar",
+      "english": "Familiar"
+    },
+    {
+      "cat": "Purr-suasive",
+      "english": "Persuasive"
+    },
+    {
+      "cat": "Purrsonality",
+      "english": "Personality"
+    },
+    {
+      "cat": "Purr-plexed",
+      "english": "Perplexed"
+    },
+    {
+      "cat": "Pawjamas",
+      "english": "Pajamas"
+    },
+    {
+      "cat": "Santa Paws",
+      "english": "Santa Claus"
+    },
+    {
+      "cat": "Fur",
+      "english": "Far"
+    },
+    {
+      "cat": "Impawsible",
+      "english": "Impossible"
+    },
+    {
+      "cat": "Mewnimum",
+      "english": "Minimum "
+    },
+    {
+      "cat": "Pawtrait",
+      "english": "Portrait "
     }
   ]
 }
