@@ -1,0 +1,107 @@
+html {
+  font-size: 16px;
+}
+
+.layout {
+    position: relative;
+    left: 0;
+    padding-left: 0;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 800px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+}
+
+.header {
+  margin: 0;
+  color: #333;
+  text-align: center;
+  padding: 1rem 2rem 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin: 0.2em 0;
+  font-size: 3em;
+  font-weight: 300;
+}
+
+.header h2 {
+  font-weight: 300;
+  color: #848484;
+  padding: 0;
+  margin-top: 0;
+}
+
+.pure-button {
+  font-size: 115%;
+}
+
+.total {
+  text-align: center;
+}
+
+.pure-button[disabled] {
+  opacity: 1;
+}
+
+.diccionary {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.diccionary li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+.pure-button-primary {
+  margin-left: 1rem;
+}
+
+.actions {
+  margin-bottom: 2rem;
+}
+
+.actions fieldset {
+  padding: 0;
+}
+
+.footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: solid 1px #eee;
+}
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 48em) {
+    .header {
+      padding-top: 2.5rem;
+    }
+
+    .header,
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    .layout {
+      left: 0;
+    }
+
+    .total {
+      text-align: right;
+    }
+
+    .pure-button {
+      font-size: 150%;
+    }
+}
