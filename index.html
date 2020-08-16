@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cat Vocabulary</title>
   <link rel="stylesheet" href="assets/css/pure-min.css?ver=2.0.3">
-  <link rel="stylesheet" href="assets/css/styles.css?ver=1.0.0">
+  <link rel="stylesheet" href="assets/css/grids-responsive-min.css?ver=2.0.3">
+  <link rel="stylesheet" href="assets/css/styles.css?ver=1.1.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
@@ -21,18 +22,57 @@
 
 <div class="layout">
   <main id="main">
-    <header class="header">
-        <h1>Cat Vocabulary</h1>
-        <h2>The purr-fect list</h2>
+    <header class="header pure-g">
+        <div class="pure-u-1-5 pure-u-md-1">
+          <img class="logo" src="assets/icons/cat.svg" alt="Cat Vocabulary Logo">
+        </div>
+        <div class="pure-u-4-5 pure-u-md-1">
+          <h1>Cat Vocabulary</h1>
+          <h2>The purr-fect list</h2>
+        </div>
     </header>
 
     <div class="content">
         <div id="app">
+          <div class="translate">
+            <h2>💬 Translate</h2>
+            <p>English ➡️ Cat</p>
+            <form class="pure-form pure-form-stacked" v-on:submit.prevent="onSubmit">
+              <fieldset>
+                <input
+                  type="text"
+                  id="filter"
+                  placeholder="Enter some text right meow..."
+                  :value="original"
+                  @keypress="original = $event.target.value"
+                  @input="original = $event.target.value" />
+              </fieldset>
+            </form>
+
+            <div
+              class="translated"
+              v-show="translated.length > 0"
+              id="translated">
+              {{ translated }}
+            </div>
+
+            <div class="translate-actions">
+              <button
+                v-show="translated.length > 0"
+                class="pure-button pure-button-primary"
+                data-clipboard-target="#translated">Copy translated text</button>
+            </div>
+
+            <hr>
+          </div>
           <div class="pure-g actions">
+            <div class="pure-u-1">
+              <h2>🔍 Search</h2>
+            </div>
             <div class="pure-u-1-2">
-              <form class="pure-form pure-form-stacked">
+              <form class="pure-form pure-form-stacked" v-on:submit.prevent="onSubmit">
                 <fieldset>
-                    <label for="filter">Search found: {{ filteredDiccionary.length }}</label>
+                    <label for="filter">Found: {{ filteredDiccionary.length }}</label>
                     <input
                       type="text"
                       id="filter"
@@ -80,7 +120,8 @@
       el: '#app',
       data: {
         diccionary: [],
-        search: ''
+        search: '',
+        original: '',
       },
       computed: {
         filteredDiccionary: function () {
@@ -93,6 +134,20 @@
           return this.diccionary.filter(item => {
               return item.english.toLowerCase().includes(this.search.toLowerCase())
           }).sort(compare)
+        },
+        translated: function () {
+          const map = {};
+
+          this.diccionary.forEach(item => {
+            map[item.english.toLowerCase()] = item.cat.toLowerCase();
+          });
+
+          const regex = new RegExp(Object.keys(map).join("|"),"gi");
+          const output = this.original.replace(regex, function(matched){
+            return map[matched];
+          });
+
+          return output;
         }
       },
       created: function () {
