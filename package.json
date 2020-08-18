@@ -1,0 +1,24 @@
+{
+  "name": "cat-vocabulary",
+  "version": "1.0.0",
+  "description": "Search cat words and translate your English to cat language!",
+  "main": "index.js",
+  "dependencies": {
+    "prettier": "^2.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "format:check": "prettier --check ./index.html",
+    "format:write": "prettier --write ./index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quicoto/Cat-Vocabulary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quicoto/Cat-Vocabulary/issues"
+  },
+  "homepage": "https://github.com/quicoto/Cat-Vocabulary#readme"
+}
