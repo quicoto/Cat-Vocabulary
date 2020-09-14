@@ -130,11 +130,15 @@
     },
     {
       "cat": "Mewnimum",
-      "english": "Minimum "
+      "english": "Minimum"
     },
     {
       "cat": "Pawtrait",
-      "english": "Portrait "
+      "english": "Portrait"
+    },
+    {
+      "cat": "ThankMew",
+      "english": "Thank you"
     }
   ]
 }
