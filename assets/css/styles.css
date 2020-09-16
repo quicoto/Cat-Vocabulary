@@ -143,3 +143,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
       margin: 0 auto 1rem auto;
     }
 }
+
+.calendar .pure-button {
+  margin-right: 15px;
+}

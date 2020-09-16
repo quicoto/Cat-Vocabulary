@@ -140,5 +140,14 @@
       "cat": "ThankMew",
       "english": "Thank you"
     }
-  ]
+  ],
+  "calendar": {
+    "0": ["Caturday", "SundayFunday", "SundayMotivation"],
+    "1": ["Caturday", "KittyLoadMonday", "MondayMotivation"],
+    "2": ["Caturday", "TongueOutTuesday"],
+    "3": ["Caturday", "WhiskersWednesday"],
+    "4": ["Caturday", "Thursday"],
+    "5": ["Caturday", "JellyBellyFriday", "Friyay"],
+    "6": ["Caturday", "Saturday"]
+  }
 }

@@ -9,7 +9,7 @@
       rel="stylesheet"
       href="assets/css/grids-responsive-min.css?ver=2.0.3"
     />
-    <link rel="stylesheet" href="assets/css/styles.css?ver=1.1.0" />
+    <link rel="stylesheet" href="assets/css/styles.css?ver=1.1.1" />
 
     <link
       rel="apple-touch-icon"
@@ -61,6 +61,21 @@
 
         <div class="content">
           <div id="app">
+            <div class="calendar">
+              <h2>🗓 Today is</h2>
+              <p v-if="calendar[dayOfTheWeek]">
+                <button
+                  v-for="day in calendar[dayOfTheWeek]"
+                  :key="day"
+                  class="pure-button"
+                  :data-clipboard-text="day"
+                  :title="`Copy ${day} to clipboard`"
+                >
+                  {{ day }}
+                </button>
+              </p>
+              <hr />
+            </div>
             <div class="translate">
               <h2>💬 Translate</h2>
               <p>English ➡️ Cat</p>
@@ -125,9 +140,7 @@
                 </form>
               </div>
               <div class="pure-u-1-2">
-                <div class="total">
-                  Total: {{ diccionary.length }}
-                </div>
+                <div class="total">Total: {{ diccionary.length }}</div>
               </div>
             </div>
 
@@ -168,9 +181,11 @@
       var app = new Vue({
         el: "#app",
         data: {
+          calendar: [],
           diccionary: [],
           search: "",
           original: "",
+          dayOfTheWeek: 0,
         },
         computed: {
           filteredDiccionary: function () {
@@ -204,10 +219,14 @@
           },
         },
         created: function () {
-          fetch("diccionary.json")
+          fetch("diccionary.json?ver=2.0.0")
             .then((r) => r.json())
             .then((json) => {
               this.diccionary = json.diccionary;
+              this.calendar = json.calendar;
+
+              const date = new Date();
+              this.dayOfTheWeek = date.getDay();
 
               new ClipboardJS(".pure-button");
             });

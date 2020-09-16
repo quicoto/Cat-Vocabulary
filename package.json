@@ -4,7 +4,7 @@
   "description": "Search cat words and translate your English to cat language!",
   "main": "index.js",
   "dependencies": {
-    "prettier": "^2.0.5"
+    "prettier": "^2.1.2"
   },
   "devDependencies": {},
   "scripts": {
