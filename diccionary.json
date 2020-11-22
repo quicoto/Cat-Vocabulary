@@ -142,7 +142,7 @@
     }
   ],
   "calendar": {
-    "0": ["Caturday", "SundayFunday", "SundayMotivation"],
+    "0": ["Caturday", "SundayFunday", "SundayMotivation", "CatBoxSunday"],
     "1": ["Caturday", "KittyLoadMonday", "MondayMotivation"],
     "2": ["Caturday", "TongueOutTuesday", "TunaTuesday"],
     "3": ["Caturday", "WhiskersWednesday"],
