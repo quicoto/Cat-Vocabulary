@@ -212,7 +212,7 @@
 
             const regex = new RegExp(Object.keys(map).join("|"), "gi");
             const output = this.original.replace(regex, function (matched) {
-              return map[matched];
+              return map[matched.toLowerCase()];
             });
 
             return output;
